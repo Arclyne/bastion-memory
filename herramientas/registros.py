@@ -7,7 +7,7 @@ VAULT_ROOT = pathlib.Path(__file__).resolve().parent.parent
 AUTHORS_NOTE = VAULT_ROOT / "AUTORES.md"
 LOCAL_AUTHOR_FILE = VAULT_ROOT / ".autor"
 RECORD_ID = re.compile(r"^([DQT])-(\d+)([a-z]?)$")
-AUTHOR_ROW = re.compile(r"^\| ([a-z0-9]+) \| ([a-z]) \|", re.MULTILINE)
+AUTHOR_ROW = re.compile(r"^\|\s*([a-z0-9]+)\s*\|\s*([a-z])\s*\|", re.MULTILINE)
 SLUG_WORD_LIMIT = 6
 ORIGIN_FIELD = "origen"
 
