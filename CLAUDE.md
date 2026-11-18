@@ -62,4 +62,5 @@ Buscar en todo: `grep -rn "texto" --include=*.md --exclude-dir=archivo .`
 
 ## Reglas de código
 - Leer las reglas E-NN que apliquen antes de escribir. Sin rastros de IA en código, commits ni PRs.
+- Antes de escribir o revisar código, `python3 herramientas/ver.py decisiones profesor`. Lo que pidió el profesor manda aunque el estándar muestre lo contrario: el ejemplo correcto de E-75 devuelve `null` y el profesor lo marcó como error (D-075a). Una decisión que nace de una observación del profesor lo dice en `porqué:` para que esa búsqueda la encuentre.
 - Rutas de error: probarlas contra una falla real antes de darlas por buenas. Interfaz con Gum: abrir el juego.

@@ -17,7 +17,7 @@ grupo: estandar
 Ningún método devuelve `null`: ahora devuelve un valor bandera o un `Lookup<T>` que se revisa solo. Un commit por carpeta. **Según José, los commits intermedios no compilan**; solo compila el último.
 
 ## Antes de revisar el código
-- [ ] **Dudoso: el estándar no lo pide.** El código correcto de E-75 (9.4.1) es `public Player? FindPlayer(...)`, que devuelve null, y el proyecto usa referencias anulables. Hay que decidir con José si este cambio se queda y registrarlo como decisión (por ejemplo, "ningún método devuelve null" con `reglas: E-75`), o regresarlo.
+- [x] **Dudoso: el estándar no lo pide.** Resuelto: el cambio se queda porque lo pidió el profesor ([[D-075a-ningun-metodo-devuelve-null|D-075a]], 2026-11-18).
 
 ## Cambios por revisar
 ### El resultado de búsqueda
