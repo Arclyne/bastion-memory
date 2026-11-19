@@ -18,3 +18,4 @@ tema: reglas
   - al arrancar, el servidor cierra por tiempo las partidas que quedaron abiertas con el reloj agotado (así se cerraron la 12 de ejemplo y la 6007 de prueba); no hay compensación por el tiempo con el servidor apagado hasta la fase de reconexión.
 - descartado: pausar el reloj al abrir la confirmación de abandonar o al perder la conexión (RN-11 del caso Jugar turno lo prohíbe).
 - dónde vive: rama `match-closure` sin commit. Canvas página «08 · Partida», tarjeta f06, versión 35. Probado en vivo el 2026-11-19 (partida 6008: pedro_peon agotó su reloj, marta_muros ganó 1022 » 1034). José no lo ha visto.
+- reemplazada en parte (2026-11-19): al arrancar ya no se cierran por tiempo las partidas abiertas; se marcan desconectadas y el turno empieza en el arranque ([[D-093a-la-reconexion-se-arma-con-la|D-093a]]).
