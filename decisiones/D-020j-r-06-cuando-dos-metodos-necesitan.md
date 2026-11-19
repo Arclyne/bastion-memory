@@ -3,7 +3,7 @@ tipo: decision
 id: D-020j
 fecha: 2026-11-10
 autor: jose
-estado: vigente
+estado: reemplazada por D-080a
 tema: estandar
 origen: journal R-06
 reglas: E-46

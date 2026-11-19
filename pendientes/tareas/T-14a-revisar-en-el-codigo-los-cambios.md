@@ -17,7 +17,7 @@ grupo: estandar
 Ningún método propio declara un parámetro `out`: cada método devuelve el resultado, un valor bandera cuando no hay resultado, o actúa sobre el resultado. Las llamadas a `Try…` de .NET (`Dictionary.TryGetValue`, `int.TryParse`, el `TryGetValue` de CoreWCF) conservan su `out`. **Según José, los commits intermedios no compilan.**
 
 ## Antes de revisar el código
-- [ ] **Dudoso: contradice una decisión registrada y el estándar no lo pide.** La D-020j (R-06) pide el patrón `TryGetX(…, out T x)`, y este PR quita justo `TryGetActiveLockEnd`, que salió de esa decisión. Además, E-08 (2.2.3) permite los métodos `Try…`. Si se queda, hace falta una decisión nueva que deje la D-020j como `reemplazada`.
+- [x] Resuelto el 2026-11-18: D-080a reemplaza a D-020j (Angel). **Dudoso: contradice una decisión registrada y el estándar no lo pide.** La D-020j (R-06) pide el patrón `TryGetX(…, out T x)`, y este PR quita justo `TryGetActiveLockEnd`, que salió de esa decisión. Además, E-08 (2.2.3) permite los métodos `Try…`. Si se queda, hace falta una decisión nueva que deje la D-020j como `reemplazada`.
 - [ ] **Dudoso: valores bandera.** Un `""` o un `(-1, -1)` olvidado no da advertencia del compilador; un null con anulables sí.
 
 ## Cambios por revisar
