@@ -1,7 +1,7 @@
 ---
 tipo: estandar-texto
 seccion: 5
-verificado: 2026-11-13 (copia literal de pdftotext del PDF v2.4; ver [[estandar-v2.4]])
+verificado: 2026-11-13 (copia literal de pdftotext del PDF v2.4; ver [[estandar-v2.4]]); 5.3.1 y sus ejemplos cambiados el 2026-11-18 (D-084a)
 ---
 # 5. Prácticas de Programación Funcional
 
@@ -115,7 +115,7 @@ privado y se pasa como grupo de método (Sección 5.2).
 public IReadOnlyList<Player> FindPlayersWithWinningCard()
 {
     IEnumerable<Player> winners = _players.Where(HasWinningCard);
-    return new List<Player>(winners);
+    return [.. winners];
 }
 
 private bool HasWinningCard(Player player)
@@ -127,7 +127,7 @@ private bool HasWinningCard(Player player)
 public IReadOnlyList<Player> FindPlayersWithWinningCard()
 {
     IEnumerable<Player> winners = _players.Where(player => player.Cards.Any(card => card.IsWinning));
-    return new List<Player>(winners);
+    return [.. winners];
 }
 
 
@@ -149,7 +149,9 @@ _players.ForEach(player => RegisterPlayerScore(player));
 5.3.1.    Regla: un operador por línea y materialización aparte
     Regla: En LINQ a objetos, una consulta que devuelve una secuencia se guarda en una variable
 IEnumerable<T> con nombre en plural (Sección 2.1.2) y solo se materializa cuando se necesita
-una colección, en una instrucción aparte con new List<T>(consulta). Si la consulta encadena
+una colección, en una instrucción aparte con la expresión de colección [.. consulta] (Sección
+3.4.2); un diccionario se materializa con new Dictionary<TKey, TValue>(consulta), porque la
+expresión de colección no admite diccionarios con elementos. Si la consulta encadena
 dos o más operadores, como Where, Select, OrderBy o Chunk, la colección de origen queda en la
 primera línea y cada operador va en su propia línea, con un nivel más de indentación (Sección
 3.5). Prohibido escribir en una sola línea una cadena de dos o más operadores, así como encadenar
@@ -170,7 +172,7 @@ public IReadOnlyList<string> GetActivePlayerNames()
     IEnumerable<string> activeNames = _players
         .Where(player => player.IsActive)
         .Select(player => player.Name);
-    return new List<string>(activeNames);
+    return [.. activeNames];
 }
 
 public void NotifyWaitingPlayers()

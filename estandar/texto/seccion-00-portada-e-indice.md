@@ -1,7 +1,7 @@
 ---
 tipo: estandar-texto
 seccion: 0
-verificado: 2026-11-13 (copia literal de pdftotext del PDF v2.4; ver [[estandar-v2.4]])
+verificado: 2026-11-13 (copia literal de pdftotext del PDF v2.4; ver [[estandar-v2.4]]); 3.4.2 agregada al índice el 2026-11-18 (D-084a)
 ---
 # Portada e índice
 
@@ -83,6 +83,7 @@ verificado: 2026-11-13 (copia literal de pdftotext del PDF v2.4; ver [[estandar-
          3.3.1       Regla: estilo Allman . . . . . . . . . . . . . . . . . . . . . . . . . . . .    29
     3.4      Uso de var . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    30
          3.4.1       Regla: solo cuando el tipo es evidente . . . . . . . . . . . . . . . . . .      30
+         3.4.2       Regla: expresión de colección para crear una colección . . . . . . . . .        30
     3.5      División de Líneas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    30
          3.5.1       Regla: cómo continuar una instrucción en varias líneas . . . . . . . . .        30
     3.6      Atributos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   31

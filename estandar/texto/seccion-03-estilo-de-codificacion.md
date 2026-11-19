@@ -1,7 +1,7 @@
 ---
 tipo: estandar-texto
 seccion: 3
-verificado: 2026-11-13 (copia literal de pdftotext del PDF v2.4; ver [[estandar-v2.4]])
+verificado: 2026-11-13 (copia literal de pdftotext del PDF v2.4; ver [[estandar-v2.4]]); 3.4.2 agregada el 2026-11-18 (D-084a)
 ---
 # 3. Estilo de Codificación
 
@@ -159,6 +159,33 @@ Player player = new Player("Alice");
 Board board = Board.Create(BoardSize);
 var remainingTurns = CalculateRemainingTurns();
 var playerNames = new string[MaximumPlayers];
+
+3.4.2.    Regla: expresión de colección para crear una colección
+    Regla: Una colección vacía se crea con la expresión de colección [] y una con elementos
+conocidos con [a, b], en lugar de new List<T>(), new Dictionary<TKey, TValue>(), new HashSet<T>()
+o un inicializador como new List<T> { a }. Para llenarla con todos los elementos de otra
+colección o de una consulta se usa el operador de propagación .., que se lee «todos los
+elementos de»: [.. consulta] (Sección 5.3.1). El tipo queda escrito donde se declara el campo,
+la propiedad, el parámetro o el valor de retorno; en una variable local se escribe el tipo
+explícito, porque var no puede deducir el tipo de una expresión de colección (Sección 3.4.1).
+    Descripción: La expresión de colección evita repetir tipos largos, como
+Dictionary<int, List<Player>>, y usa la misma sintaxis para listas, conjuntos, diccionarios y
+arreglos. El operador .. es el mismo que usan otros lenguajes para propagar una colección
+(... en JavaScript, * en Python). No cambia el comportamiento: con destino List<T>, [] equivale
+a new List<T>().
+    Código correcto:
+private readonly Dictionary<int, List<Player>> _playersByTeam = [];
+
+List<Card> drawnCards = [];
+IEnumerable<Player> winners = _players.Where(HasWinningCard);
+return [.. winners];
+
+     Código incorrecto:
+private readonly Dictionary<int, List<Player>> _playersByTeam = new Dictionary<int, List<Player>>();
+
+var drawnCards = new List<Card>();
+IEnumerable<Player> winners = _players.Where(HasWinningCard);
+return new List<Player>(winners);
 
 
 3.5.     División de Líneas

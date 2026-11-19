@@ -21,4 +21,4 @@ Fuente: `requisitos-bastion/casos/CU-20-enviar-mensaje-chat.tex` (no se copia).
 - `Bastion.Client.Screens.MainMenu.Chat`
 
 ## Nota
-Canal de partida; el canal de sala no tiene operación; el chat de lobby y el privado no están en el caso (Q-07a).
+Canal de partida; el canal de sala no tiene operación; el chat de lobby y el privado no están en el caso (Q-07a). En el cliente, el envío del lobby y del privado pasa por `ModeratedChatViewModel.DeliverMessage` y tiene pruebas (D-083a); el de partida sigue en `MatchChatViewModel`.
